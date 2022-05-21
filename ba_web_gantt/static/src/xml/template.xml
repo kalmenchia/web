@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+    <t t-name="GanttView.buttons">
+	  <div>
+        <button accesskey="c" class="btn btn-primary btn-sm o-gantt-button-new" type="button">
+            Create
+        </button>
+        <button class="btn btn-xs btn-default o-gantt-timeframe" data-timeframe="Hour" title="Hour">1h</button>
+        <button class="btn btn-xs btn-default o-gantt-timeframe" data-timeframe="Two Hour" title="Two Hour">2h</button>
+        <button class="btn btn-xs btn-default o-gantt-timeframe" data-timeframe="Quarter Day" title="Quarter Day">6h</button>
+        <button class="btn btn-xs btn-default o-gantt-timeframe" data-timeframe="Half Day" title="Half Day">12h</button>
+        <button class="btn btn-xs btn-default o-gantt-timeframe" data-timeframe="Day" title="Day">1d</button>
+        <button class="btn btn-xs btn-default o-gantt-timeframe" data-timeframe="Week" title="Week">1w</button>
+        <button class="btn btn-xs btn-default o-gantt-timeframe" data-timeframe="Month" title="Month">1m</button>
+      </div>
+    </t>
+  
+</templates>

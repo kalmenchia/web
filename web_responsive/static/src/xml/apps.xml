@@ -19,7 +19,7 @@
             <attribute name="accesskey">a</attribute>
         </t>
 
-        <!-- Search bar -->
+        <!-- Search bar 
         <t t-jquery="[t-as=app]" t-operation="before">
             <div class="search-container form-row align-items-center mb-4 col-12">
                 <div class="search-input col-md-10 ml-auto mr-auto mb-2">
@@ -38,6 +38,7 @@
                 <div class="search-results col-md-10 ml-auto mr-auto"/>
             </div>
         </t>
+        -->
     </t>
 
     <!-- Separate app icon template, for easier inheritance -->

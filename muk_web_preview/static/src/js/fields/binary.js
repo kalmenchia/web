@@ -1,19 +1,22 @@
 /**********************************************************************************
-* 
-*    Copyright (C) 2017 MuK IT GmbH
+*
+*    Copyright (c) 2017-2019 MuK IT GmbH.
+*
+*    This file is part of MuK Preview 
+*    (see https://mukit.at).
 *
 *    This program is free software: you can redistribute it and/or modify
-*    it under the terms of the GNU Affero General Public License as
-*    published by the Free Software Foundation, either version 3 of the
-*    License, or (at your option) any later version.
+*    it under the terms of the GNU Lesser General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    (at your option) any later version.
 *
 *    This program is distributed in the hope that it will be useful,
 *    but WITHOUT ANY WARRANTY; without even the implied warranty of
 *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*    GNU Affero General Public License for more details.
+*    GNU Lesser General Public License for more details.
 *
-*    You should have received a copy of the GNU Affero General Public License
-*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*    You should have received a copy of the GNU Lesser General Public License
+*    along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 **********************************************************************************/
 
@@ -49,6 +52,7 @@ fields.FieldBinaryFile.include({
     _onPreviewButtonClick: function(event) {
         var filename_fieldname = this.attrs.filename;
         var last_update =  this.recordData.__last_update;
+        var mimetype = this.recordData['mimetype'] || null;
         var filename = this.recordData[filename_fieldname] || null;
         var unique = last_update && field_utils.format.datetime(last_update);
         var binary_url = session.url('/web/content', {
@@ -65,7 +69,7 @@ fields.FieldBinaryFile.include({
     		this, [{
     			url: binary_url,
     			filename: filename,
-    			mimetype: undefined,
+    			mimetype: mimetype,
     		}], 0
         );
         preview.appendTo($('body'));

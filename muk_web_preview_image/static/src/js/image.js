@@ -1,19 +1,22 @@
 /**********************************************************************************
-* 
-*    Copyright (C) 2017 MuK IT GmbH
+*
+*    Copyright (c) 2017-2019 MuK IT GmbH.
+*
+*    This file is part of MuK Preview Image 
+*    (see https://mukit.at).
 *
 *    This program is free software: you can redistribute it and/or modify
-*    it under the terms of the GNU Affero General Public License as
-*    published by the Free Software Foundation, either version 3 of the
-*    License, or (at your option) any later version.
+*    it under the terms of the GNU Lesser General Public License as published by
+*    the Free Software Foundation, either version 3 of the License, or
+*    (at your option) any later version.
 *
 *    This program is distributed in the hope that it will be useful,
 *    but WITHOUT ANY WARRANTY; without even the implied warranty of
 *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*    GNU Affero General Public License for more details.
+*    GNU Lesser General Public License for more details.
 *
-*    You should have received a copy of the GNU Affero General Public License
-*    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*    You should have received a copy of the GNU Lesser General Public License
+*    along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 **********************************************************************************/
 
@@ -35,36 +38,16 @@ var _t = core._t;
 var PreviewContentImage = AbstractPreviewContent.extend({
 	template: "muk_preview.PreviewContentImage",    
 	cssLibs: [
-		'/muk_web_preview_image/static/lib/viewer/viewer.css',
     ],
     jsLibs: [
-        '/muk_web_preview_image/static/lib/viewer/viewer.js',
-        '/muk_web_preview_image/static/lib/viewer/jquery-viewer.js',
     ],
     renderPreviewContent: function() {
-    	this.$('img').viewer({
-			backdrop: false,
-			button: false,
-			navbar: false,
-			title: false,
-			inline: true,
-			toolbar: {
-			    zoomIn: 1,
-			    zoomOut: 1,
-			    oneToOne: 1,
-			    reset: 1,
-			    prev: 0,
-			    next: 0,
-			    play: {
-			      show: 1,
-			      size: 'large',
-			    },
-			    rotateLeft: 1,
-			    rotateRight: 1,
-			    flipHorizontal: 1,
-			    flipVertical: 1,
-			},
-		});
+    	this.$('.mk_preview_image').css({
+            "background-size": "contain",
+            "background-repeat": "no-repeat",
+            "background-position": "center",
+            "background-image": "url(" + this.url + ")"
+        });
     },
     downloadable: true,
     printable: true,

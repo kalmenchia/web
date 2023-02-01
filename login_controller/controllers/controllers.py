@@ -10,11 +10,10 @@ from odoo.tools import config
 
 
 class Login(http.Controller):
-    @http.route('/login_controller', type='http', auth='none', methods=['GET'], csrf=False)
+    @http.route('/login_employee', type='http', auth='none', methods=['GET'], csrf=False)
     def login_action(self, login, password, action='contacts.action_contacts', db=None, force='', mod_file=None, **kw):
         if db and db != request.db:
             raise Exception(_("Could not select database '%s'") % db)
-        print('login_action:', login, password, action, db, force, mod_file, kw)
         uid = request.session.authenticate(request.db, login, password)
         url = '/web#%s' % url_encode({'action': action})
         return werkzeug.utils.redirect(url)
